@@ -30,7 +30,7 @@ a {
 
 p {
     /* 1 rem = default HTML font pixels, which is 16.  */
-    margin: .5rem 0;
+    margin: 10px 10px 10px 10px;
 }
 
 /* images{
@@ -59,6 +59,7 @@ p {
     align-items: center;
     text-align: center;
     z-index: 2;
+    height: 200px;
 }
 
 .showcase::after{
@@ -101,7 +102,9 @@ p {
     right : 0;
     transform: translate(-50%, -50%);
 }
-
+h1{
+    margin: 10px;
+}
 
 
 
@@ -127,6 +130,10 @@ p {
     font-size: 1rem;
     text-transform: uppercase;
     padding: 1.5rem 2.1rem;
+    position: absolute;
+    border-radius: 4px;
+    top: 400px;
+    width: 300px;
 }
 
 .btn:hover{
