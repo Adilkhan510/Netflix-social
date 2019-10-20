@@ -18,22 +18,53 @@
            <form  id="sign-up-form"> 
                
                <div id="form-div">
-                    <h3>Sign In </h3>
+                    <h3>Sign up </h3>
                     <div >
-                        <label class="lable-email"> </label>
-                        <input class="form-input" type="email" placeholder="Email" name="email-signin" value="email">
+                        <label for="name"> </label>
+                        <input id="name"  class="form-input"type="text" placeholder = "Name" name="name" value="">
+                    </div>
+                    <div >
+                        <label for="lastName" > </label>
+                        <input id="lastName" class="form-input" type="text" placeholder="Last name" name="lastName" value="">
+                    </div>
+                    <div >
+                        <label for="email"> </label>
+                        <input class="form-input" id="email" type="email" placeholder="Your_email@###.com" name="email" value="">
+                    </div>
+                    <div >
+                        <label for="password" > </label>
+                        <input id="password" class="form-input" type="password" placeholder="Password" name="password" value="">
                     </div>
                     <div >
                         <label class="lable-password" > </label>
-                        <input class="form-input" type="password" placeholder="Password" name="password-signin" value="password">
+                        <input class="form-input" type="password" placeholder="Password" name="password" value="">
+                    </div>
+                    <div >
+                        <label for="passwordConfirm" > </label>
+                        <input id="passwordConfirm" class="form-input" type="password" placeholder="Confirm Password" name="passwordConfirm" value="">
+                    </div>
+                    <div>
+                        <label for="visa">Visa</label>
+                        <input type="radio" name="card" id="visa" value="">
+                        <label for="AMX">Master</label>
+                        <input type="radio" name="card" id="AMX" value="">
+                        <label for="master">AMX</label>
+                         <input type="radio" name="card" id="master" value=""><br>
+
+                    </div>
+                    <div >
+                        <label for="cardNumber"> </label>
+                        <input id= "cardNumber" class="form-input" type="number" placeholder="Card Number" name="cardName" value="cardNumber">
+                    </div>
+                    <div >
+                        <label for="cvc"> </label>
+                        <input  id="cvc" class="form-input" type="number" placeholder="CVC" name="CVC" value="CVC">
                     </div>
                     <div >
                         <label  > </label>
-                        <button id="signin-btn" type="button" >Sing in</button>
+                        <button id="signin-btn" type="button" >Submit</button>
                     </div>
-                    <div>
-                            <p>New to netflix ?&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Sign up now </a></p>
-                    </div>
+                    
                 </div >
                 
         
