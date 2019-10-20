@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.main{
+    background-image:url('/imge/background.jpg');
+    height:100vh;
+    width: 100%;
+    background-size: cover;
+    z-index: 1;
+    background-position: center;
+    
+}
+header{
+height: 30px;
+background: brown;
+
+}
+
+#sign-up-form{
+height: 200px;
+widows: 150px;
+background: black;
+color: white;
+
+}
+
+#netflix-logo{
+    height: 30px;
+    width: 100px;
+} 
