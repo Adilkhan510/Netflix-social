@@ -4,31 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel = "stylesheet" type = "text/css" href = "./css/style.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Sign Up</title>
+</head>
 
+    
+  
 <body>
-    <div class="main">
-    <header>
-        <a><img class="netflix-logo" src="./imge/netflix.png"></a>
-    </header>
-            <form  id="sign-up-form">
-                <div>
-                    <label class="lable-email"> Email </label>
-                    <input type="email" placeholder="Email">
-                </div>
-                <div>
-                    <label class="lable-password"> password </label>
-                    <input type="password" placeholder="Password">
-                </div>
-                <div>
-                    <label class="sign-up-form" > </label>
-                    <button id="sign-up-btn" type="button" >Sing in</button>
-            </div>
-            <div >
-                    <p>New to netflix ?&nbsp;&nbsp;&nbsp;&nbsp;<a>Sign UP now </a></p>
-            </div>
-            </form>
-
-        </div>
+        <header>   
+                <a href="#"><img id="netflix-logo" src="./image/netflix.png"></a>
+        </header>
+    
+           <form  id="sign-up-form"> 
+               
+               <div id="form-div">
+                    <h3>Sign In </h3>
+                    <div >
+                        <label class="lable-email"> </label>
+                        <input class="form-input" type="email" placeholder="Email" name="email-signin" value="email">
+                    </div>
+                    <div >
+                        <label class="lable-password" > </label>
+                        <input class="form-input" type="password" placeholder="Password" name="password-signin" value="password">
+                    </div>
+                    <div >
+                        <label  > </label>
+                        <button id="signin-btn" type="button" >Sing in</button>
+                    </div>
+                    <div>
+                            <p>New to netflix ?&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Sign up now </a></p>
+                    </div>
+                </div >
+                
+        
+            </form> 
 </body>
 </html>
