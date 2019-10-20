@@ -10,11 +10,17 @@ const userSchema = new schema({
         type: String,
         required: true,
     },
-    age : {
-        type : Number,
+    dateOfBirth : {
+        type : String,
         required : true, 
     },
-    gender : String,
+    cardNumber: {
+        type: Number,
+        required: true,
+    },
+    cardType : {
+        type : String,
+        required : true,
+    },
     favoriteMovies : [String],
-
 })
