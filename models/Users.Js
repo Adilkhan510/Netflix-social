@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
-const schema = mongoose.schema;
+const Schema = mongoose.Schema;
+const Reviews = require('./Reviews')
+const Movies = require('./Movies')
 
-const userSchema = new schema({
+const UserSchema = new Schema({
     name : {
         type: String,
         required: true,
@@ -22,5 +24,15 @@ const userSchema = new schema({
         type : String,
         required : true,
     },
-    favoriteMovies : [String],
+    favoriteMovies : [{
+        type: Schema.Types.ObjectId,
+        ref: 'Movies'
+    }],
+
+    // embedded data
+    reviews : [Reviews.schema],
 })
+
+const User = mongoose.model('User', UserSchema);
+
+module.exports = User;
