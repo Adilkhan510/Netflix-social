@@ -8,10 +8,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .showcase{
-    background-image: url('/images/background.jpg');
+    background: url('/images/background.jpg') no-repeat center center/cover;
     width: 100%;
     height: 100vh;
-    background-repeat: no-repeat;
 }
 
 
@@ -48,7 +47,7 @@ form{
     background: rgba(0,0,0,0.8);
     color: white;
     border-radius: 5px;
-    height: 733px;
+    height: 600px;
     width: 550px ;
     display:block;
     border-radius: 8px;
@@ -70,7 +69,7 @@ form{
 
 h1{
     position: absolute;
-    top: 80px;
+    top: 60px;
     left: 20%;
     font-size: 40px;
     color:#ffffff;
@@ -114,7 +113,7 @@ h1{
 
 
 
-.btn.btn-primary{
+#signIn{
     position: absolute;
     bottom: 50%;
     left: 20%;
