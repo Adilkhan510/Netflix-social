@@ -8,6 +8,7 @@ body{
 #netflix-logo{
     height: 60px;
     width: 130px;
+
     margin: 0 auto;
     position: absolute;
 }
@@ -17,26 +18,25 @@ transition: 0.7s;
 border-radius: 20px;
 }
 #sign-up-form{
-width: 360px;
-padding: 8% 0 0 ;
+width: 450px;
+padding: 5% 0 0 ;
 margin: auto;
 }
 #form-div{
 
     position: relative;
     z-index: 1;
-    background: black;
+    background: rgba(0 , 0 , 0 , 0.3);
     max-width: 500px;
-    margin: 0 auto ;
-    padding: 45px;;
-    height: 250px;
+    margin: 0 auto  ;
+    height: 600px;
     text-align: center;
     color: blanchedalmond;
     border-radius: 10px;
 }
 .form-input{
-    margin: 5px;
-    width: 230px;
+    margin: 10px;
+    width: 250px;
     height: 30px;
     text-transform: capitalize;
     border-radius: 5px;
@@ -68,3 +68,4 @@ h3{
     color: white;
     
 }
+
