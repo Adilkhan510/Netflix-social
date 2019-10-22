@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Users = require('./');
 
 const ReviewSchema = new Schema({
-    movieName: String,
-    notes : String,
+    Type: String,
+    user : {
+        type : Schema.Types.ObjectId,
+        ref : 'Users'
+    }
 })
 
 const Reviews = mongoose.model('MovieReviews', ReviewSchema);
