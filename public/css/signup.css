@@ -1,3 +1,6 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
 body{
     background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(/images/background.jpg);
     height: 100vh;
@@ -40,9 +43,10 @@ margin: auto;
     height: 30px;
     text-transform: capitalize;
     border-radius: 5px;
+    
 
 }
-#signin-btn{
+#signin{
 
     width: 230px;
     height: 30px;
@@ -75,4 +79,27 @@ button{
 
     border:none;
     font-size:1rem;
+}
+.error{
+    position: relative;
+    height: 5px;
+    width : 10px;
+    color : red;
+    background:black;
+    font-size: .8rem;
+    z-index: 100;
+    position:absolute;
+}
+.invalid{
+    /* font-size: 12px;
+    color : red ;
+    margin: 0 0 0 100px ;
+    text-align: justify; */
+    border: 10px solid red;
+}
+.valid{
+    font-size: 12px;
+    color :green ;
+    margin: 0 0 0 100px ;
+    text-align: justify;
 }
