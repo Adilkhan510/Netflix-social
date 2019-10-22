@@ -34,24 +34,25 @@ app.get('/login',(req,res)=>{
         root:__dirname,
     });
 });
-
+// ------routes for sign up page----//
 app.get('/signup', (req,res)=>{
     res.sendFile('views/signup.html',{
         root:__dirname,
     })
 })
-
+// -------routes for browse page-----//
 app.get('/browse', (req,res)=>{
     res.sendFile('views/browse.html',{
         root:__dirname,
     })
 })
 
+
 // -------------Modifying database routes------//
 
 // ---show users database--//
 app.get('/api/v1/users',(req,res)=>{
-    db.Users.find({},(error,allUsers)=>{
+    db.Users.find({}).populate('favoriteMovies').exec((error,allUsers)=>{
         if(error) return console.log(error);
         res.json({
             status: 200,
@@ -100,6 +101,7 @@ app.put('/api/v1/users/update/:userId',(req,res)=>{
         });
     });
 });
+
 
 
 // ---show movie database--//
@@ -153,8 +155,12 @@ app.put('/api/v1/movies/update/:movieId', (req,res)=>{
     })
 })
 
+// ---------route for updating user review-----/
 
 
+
+// ------MongoDB association----/
+app.get('/users/')
 
 
 
