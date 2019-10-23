@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Reviews = require('./Reviews')
-// const Movies = require('./Movies')
 
 const UserSchema = new Schema({
     name : {
