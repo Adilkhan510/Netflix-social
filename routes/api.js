@@ -26,10 +26,10 @@ router.put('/users/update/:userId', ctrl.users.update);
 
 // movies Api ///
 
-//show all movies 
-// router.get('/movies',ctrl.movies.index);
+// create movie
+router.post('/movies', ctrl.movies.create)
 //show one movie
-
+router.get('/movies',ctrl.movies.show)
 
 
 
