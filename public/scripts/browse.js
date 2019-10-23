@@ -1,8 +1,20 @@
 
-const like2 = ()=>{
-	event.preventDefault();
-	console.log('like')
-}
-const like = document.querySelector('button')
+const buttonArray = document.querySelectorAll('button')
+const like2 = (btns)=>{
 
-like.addEventListener('click', like2)
+	buttonArray.forEach(btn => {
+		btn.addEventListener('click', (event)=>{
+			event.preventDefault();
+			console.log('like')
+
+		})
+	});
+}
+like2();
+
+console.log(buttonArray)
+
+
+
+
+
