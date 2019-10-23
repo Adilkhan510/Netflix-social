@@ -4,10 +4,7 @@ const Reviews = require('./Reviews')
 
 const MoviesSchema = new Schema({
 
-    name: String,
-    type: String,
-    actors:[String],
-    length: String,
+    tmdbID: String,
     reviews: [{
         type: Schema.Types.ObjectId,
         ref : 'Reviews',
