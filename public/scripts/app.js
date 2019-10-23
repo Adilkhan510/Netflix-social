@@ -4,12 +4,15 @@ console.log("hello")
 
 let iChars = ["˜", "`", "!", "#", "$", "%", "ˆ", "&", "*", "+", "=", "-", "_", "[", "]", "/", ";", ":", ",", "{", "}", "|", "<", ">", "?", "!"];
 
+let valid = true;
+
 const characterValidation =(value , message)=>{
     for (let i = 0; i < iChars.length; i++) {
         if ($(value).val().includes(iChars[i]) === true || $(value).val()=== "" || $(value).val().length <2 ) {     
             $(value).addClass("invalid");
             $(message).text('invalid input');
             $(message).addClass('invalid-message');
+            valid = false;
         }else{
             $(value).addClass("valid");
             $(message).addClass('valid-message');
@@ -49,13 +52,16 @@ const allEllement = ['#name' , '#lastName', '#cardNumber','#cvc']
 const allP = ['#name-p' , '#lastName-p', '#cardNumber-p','#cvc-p']
 
 const validation = (event)=>{
+    valid = true;
     event.preventDefault();
     for(let i = 0 ; i < allEllement .length ; i++){
-            event.preventDefault();
             characterValidation(allEllement[i] , allP[i]);
-        
             }
-           
+    if(valid){
+    
+    } else {
+        console.log('not valid');
+    }
     }
 
     const Emailvalidation = (event)=>{
@@ -71,7 +77,7 @@ const passwordValidation = (event)=>{
     event.preventDefault();
     
     
-if($(`#password`).val() !== $(`#passwordConfirm`).val()){
+if($(`#password`).val() !== $(`#passwordConfirm`).val()) {
    
     $(`#password`).addClass("invalid");
     $(`#passwordConfirm`).addClass("invalid");   
