@@ -6,21 +6,20 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
+    lastName: {
+        type: String,
+        required: true,
+    },
     email : {
         type: String,
         required: true,
     },
-    dateOfBirth : {
-        type : String,
-        required : true, 
-    },
     cardNumber: {
         type: Number,
-        required: true,
+        // required: true,
     },
-    cardType : {
-        type : String,
-        required : true,
+    cvc : {
+        type: Number
     },
     favoriteMovies : [{
         type: Schema.Types.ObjectId,
