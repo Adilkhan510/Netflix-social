@@ -58,6 +58,23 @@ const validation = (event)=>{
             characterValidation(allEllement[i] , allP[i]);
             }
     if(valid){
+        const userData = {
+            name : $('#name').val(),
+            lastName: $('#lastName').val(),
+            email: $('#email').val(),
+            cardNumber: $('#cardNumber').val(),
+            cvc: $('#cvc').val(),
+        };
+        fetch('api/v1/users',{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+        .then(stream => stream.json())
+        .then(res=>console.log(res))
+        .catch((err)=> console.log(err));
     
     } else {
         console.log('not valid');
