@@ -41,4 +41,11 @@ router.get('/login',(req,res)=>{
     })
 })
 
+//show profile 
+router.get('/profile',(req,res)=>{
+res.sendFile('views/profile.html',{
+    root:`${__dirname}/../`,
+})
+})
+
 module.exports = router
