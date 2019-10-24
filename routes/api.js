@@ -18,6 +18,7 @@ router.delete('/users/:id', ctrl.users.destroy);
 // create User
 
 router.post('/users', ctrl.users.create)
+router.post('/auth/users', ctrl.users.createSession)
 
 // update
 
