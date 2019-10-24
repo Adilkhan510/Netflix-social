@@ -16,6 +16,22 @@ const newReview = (event)=> {
     $(`#submit-review`).hide('slow');
     $('#review-input').hide('slow');
     }
+
+    let settings = {
+        "url": `/api/v1/review/create/`,
+        "method": "POST",
+        "headers": {},
+        "data": {
+            "comment": `${newReviews}`,
+            "movieId" : `${window.sessionStorage.movieID}`,
+            "user" : `${window.sessionStorage.userid}`
+        }
+    }
+    $.ajax(settings).done(function(response) {
+        console.log(response);
+    })
+
+
     return;
 }
 

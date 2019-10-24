@@ -32,7 +32,7 @@ const nowPlaying = {
 			<img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/${response.results[i].poster_path}" alt="">
 			<div class="image-content">
 				<button class="${response.results[i].id} like"><i class="fas fa-thumbs-up"></i></button>
-				<button class="${response.results[i].id} comment"><a href="#">Comment</a></button>
+				<button class="${response.results[i].id} comment"><i class="fas fa-comment"></i></button>
 			</div>  
 		</div>`
 		$('.slideshow1').append(template)
@@ -58,7 +58,7 @@ const topRated = {
 			<img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/${response.results[i].poster_path}" alt="">
 			<div class="image-content">
 				<button class="${response.results[i].id} like"><i class="fas fa-thumbs-up"></i></button>
-				<button class="${response.results[i].id} comment"><a href="#">Comment</a></button>
+				<button class="${response.results[i].id} comment"><i class="fas fa-comment"></i></button>
 			</div>  
 		</div>`
 		$('.slideshow2').append(template)
@@ -83,7 +83,7 @@ const upcoming = {
 			<img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/${response.results[i].poster_path}" alt="">
 			<div class="image-content">
 				<button class="${response.results[i].id} like"><i class="fas fa-thumbs-up"></i></button>
-				<button class="${response.results[i].id} comment"><a href="#">Comment</a></button>
+				<button class="${response.results[i].id} comment"><i class="fas fa-comment"></i></button>
 			</div>  
 		</div>`
 		$('.slideshow3').append(template)
@@ -104,9 +104,14 @@ const upcoming = {
 		$.ajax(settings).done(function(response) {
 			console.log(response);
 		})
-		})
-
-});
+		});
+	$('.image-content').on('click', '.comment', ()=>{
+		event.preventDefault();
+		window.sessionStorage.setItem('movieID', `${event.target.classList[0]}`);
+		window.location= '/review'
+	})
+		
+  });
 
 
 
