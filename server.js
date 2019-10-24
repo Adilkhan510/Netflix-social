@@ -5,10 +5,10 @@ const bodyParser = require('body-parser');
 
 // -----Importing express session for session authentication
 
-const session = require('express-session')
+const session = require('express-session');
 
 const PORT = process.env.PORT || 4000;
-const routes = require('./routes')
+const routes = require('./routes');
 
 
 // ------Import Database----//
