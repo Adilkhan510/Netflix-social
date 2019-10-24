@@ -48,4 +48,10 @@ res.sendFile('views/profile.html',{
 })
 })
 
+router.get('/review',(req,res)=>{
+    res.sendFile('views/review.html',{
+        root:`${__dirname}/../`,
+    })
+    })
+
 module.exports = router

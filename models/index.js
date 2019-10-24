@@ -13,5 +13,6 @@ mongoose.connect(DB_URL,{
 
 module.exports = {
     Users : require('./Users'),
-    Movies : require('./Movies')
+    Movies : require('./Movies'),
+    Reviews : require('./Reviews')
 }
