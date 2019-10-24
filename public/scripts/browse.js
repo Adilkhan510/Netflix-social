@@ -13,6 +13,8 @@
 
 
 
+
+
 const nowPlaying = {
 	"async": true,
 	"crossDomain": true,
@@ -86,26 +88,53 @@ const upcoming = {
 		</div>`
 		$('.slideshow3').append(template)
 	}
-	// console.log(response);
-	
+	// const userId = window.sessionStorage.userid;
+	// console.log(userId);
 	$('.image-content').on('click', '.like', ()=>{
-		console.log(event.target.id)
-	
-		const id = `${event.target.id}`
+		console.log(event.target.classList[0])
 		
 		let settings = {
-			"url": "/api/v1/movies",
-			"method": "POST",
+			"url": `/api/v1/users/update/${window.sessionStorage.userid}/addmovie`,
+			"method": "PUT",
 			"headers": {},
-			data: {
-				id: id,
+			"data": {
+				"movie": `${event.target.classList[0]}`,
 			}
 		}
 		$.ajax(settings).done(function(response) {
 			console.log(response);
 		})
 		})
+
 });
+
+
+
+	
+// $(document).ready()
+
+// $(document).ready(()=>{
+// 	const userId = window.sessionStorage.userid;
+// 	const id=userId.replace(/"/g,"");
+// 	// console.log(userId);
+// 	$('.image-content').on('click', '.like', ()=>{
+// 		console.log(event.target.id)
+	
+// 		const id2 = `${event.target.id}`
+		
+// 		let settings = {
+// 			"url": `/api/v1/users/update/${id}`,
+// 			"method": "PUT",
+// 			"headers": {},
+// 			data: {
+// 				favoriteMovies: id2,
+// 			}
+// 		}
+// 		$.ajax(settings).done(function(response) {
+// 			console.log(response);
+// 		})
+// 		})
+// })
 
 
 
