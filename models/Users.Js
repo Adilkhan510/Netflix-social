@@ -23,8 +23,8 @@ const UserSchema = new Schema({
         type: Number
     },
     favoriteMovies : [{
-        type: Schema.Types.ObjectId,
-        ref: 'Movies'
+        type: String,
+        required: false,
     }],
 })
 

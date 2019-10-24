@@ -23,7 +23,7 @@ router.post('/auth/users', ctrl.users.createSession)
 // update
 
 router.put('/users/update/:userId', ctrl.users.update);
-
+router.put('/users/update/:userId/addmovie', ctrl.users.addMovie);
 
 // movies Api ///
 

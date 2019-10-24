@@ -16,7 +16,14 @@ const checkUser= ()=>{
         .then(dataStream => dataStream.json())
         .then(res => {
           console.log(res);
-          if (res.status === 201) return window.location = `/browse`;
+          if (res.status === 201){
+            window.sessionStorage.setItem(`userid`, `${res.data.id}`)
+            window.sessionStorage.setItem(`name`, `${res.data.name}`)
+            window.sessionStorage.setItem(`email`, `${res.data.email}`)
+            window.sessionStorage.setItem(`cardNumber`, `${res.data.cardNumber}`)
+            window.sessionStorage.setItem(`cvc`, `${res.data.cvc}`)
+            return window.location = '/browse'
+          }
         })
         .catch(err => console.log(err));
 }
