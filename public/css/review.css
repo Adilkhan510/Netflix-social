@@ -1,0 +1,86 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("../images/background2.jpg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+button{
+    
+    margin-top: 10px;
+    margin-right: 5px;
+    height:20px;
+    width: 70px;
+    color:white;
+    background: red;
+    border-radius: 10px;  
+}
+
+#newReviews{
+height:40px;
+width:auto;
+background:rgba(99, 94, 99,0.8);
+border-radius: 10px 20px 10px 20px;
+color:rgb(175, 175, 130);
+text-align: justify;
+}
+#submit-review{
+    margin-left: 20px;
+    height:40px;
+    width: 450px;
+    color:white;
+    background: red;
+    border-radius: 10px;
+
+}
+#buttons{
+display: block; 
+border:none;
+}
+button:hover{
+
+    border: 2px solid red;
+    transition: 0.8s;
+    
+}
+
+#review-input{
+    height: 185px;
+    width :90%;
+    margin: 20px ;
+    font-size: 1.5rem;
+     color: rgba(17, 216, 73, 0.742); 
+    background: rgba(203, 196, 196, 0.4);
+    border-radius: 5px;
+}
+#review-input:focus{
+    background: rgba(244, 222, 222, 0.4);
+    border:2px solid green;
+}
+
+
+#netflix-logo:hover{
+    border: 1px solid blue;
+    transition: 0.7s;
+    border-radius: 20px;
+    position: sticky;
+}
+#netflix-logo{
+        height: 60px;
+        width: 130px;
+        margin-top: 20px;
+        margin-left: 20px;
+}
+#review{
+        margin: auto;
+        height:300px;
+        width :500px;
+        background:rgba(97, 64, 64, 0.482);
+        color:white;
+        border-radius: 50px;
+        margin-top: 10%;
+        z-index: 100;
+
+}
