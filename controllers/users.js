@@ -57,10 +57,36 @@ const show = (req,res)=>{
     })
 }; 
 
+const createSession = (req,res)=>{
+    console.log('req sessssion---->Creating session');
+    db.Users.findOne({email: req.body.email},(err,foundUser)=>{
+        if(err) return res.status(500).json({
+            status: 500,
+            Message: "something went wrong"
+        })
+        if(!foundUser) return res.status(200).json({
+            status: 201,
+            message: "incorrect password or email"
+        })
+        if(req.body.password === foundUser.password){
+            req.session.currentUser = foundUser._id;
+            res.status(201).json({
+                status: 201,
+                data: {
+                    id: foundUser._id
+                }
+            })
+        }
+    })
+
+}
+
+
 module.exports ={
     show,
     update,
     create,
     destroy,
     index,
+    createSession
 }
