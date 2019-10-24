@@ -33,6 +33,11 @@ router.post('/movies', ctrl.movies.create)
 router.get('/movies',ctrl.movies.show)
 
 
+// review route
+
+router.get('/review', ctrl.reviews.show)
+router.post('/review/create', ctrl.reviews.create)
+
 
 
 

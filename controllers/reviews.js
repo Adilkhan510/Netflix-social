@@ -1,7 +1,8 @@
 const db = require('../models');
 
 const show = (req,res)=>{
-    db.Reviews.find({},(error,allReviews)=>{
+    db.Reviews.find({}).populate('user')
+    .exec((error,allReviews)=>{
         if(error) return console.log(error);
         res.json({
             status: 200,

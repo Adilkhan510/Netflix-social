@@ -87,14 +87,16 @@ const createSession = (req,res)=>{
 
 const addMovie = (req,res) => {
     const movie = req.body.movie
+    console.log(movie);
     db.Users.findById(req.params.userId, (error, foundUser)=>{
-        // find movie with that id
-        // push into favorite movies
-        db.Movies.find({tmdbID: movie}, (error, foundMovie)=>{
+        if(error)return console.log(error);
+        db.Movies.findOne({tmdbID: movie}, (error, foundMovie)=>{
+            if(error)return console.log(error);
             if(foundMovie){
                 foundUser.favoriteMovies.push(foundMovie._id);
             } else {
                 db.Movies.create({tmdbID:movie}, (error, createdMovie)=>{
+                    if(error)return console.log(error);
                     foundUser.favoriteMovies.push(createdMovie._id);
                 })
             }
