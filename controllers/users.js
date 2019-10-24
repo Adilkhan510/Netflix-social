@@ -24,7 +24,7 @@ const destroy = (req,res)=>{
 }
 
 const index = (req,res)=>{
-    db.Users.find({}).populate('favoriteMovies').exec((error,allUsers)=>{
+    db.Users.find({},(error,allUsers)=>{
         if(error) return console.log(error);
         res.json({
             status: 200,
@@ -73,12 +73,41 @@ const createSession = (req,res)=>{
             res.status(201).json({
                 status: 201,
                 data: {
-                    id: foundUser._id
+                    id: foundUser._id,
+                    name: foundUser.name,
+                    email: foundUser.email,
+                    cardNumber: foundUser.cardNumber,
+                    cvc: foundUser.cvc
                 }
             })
         }
     })
 
+}
+
+const addMovie = (req,res) => {
+    const movie = req.body.movie
+    db.Users.findById(req.params.userId, (error, foundUser)=>{
+        // find movie with that id
+        // push into favorite movies
+        db.Movies.find({tmdbID: movie}, (error, foundMovie)=>{
+            if(foundMovie){
+                foundUser.favoriteMovies.push(foundMovie._id);
+            } else {
+                db.Movies.create({tmdbID:movie}, (error, createdMovie)=>{
+                    foundUser.favoriteMovies.push(createdMovie._id);
+                })
+            }
+            foundUser.save((error, savedUser)=>{
+                if(error)return console.log(error);
+                res.json({
+                    status: 200,
+                    data: savedUser,
+                    requestedAt: new Date().toLocaleString(),
+                });
+            });
+        })
+    });
 }
 
 
@@ -88,5 +117,6 @@ module.exports ={
     create,
     destroy,
     index,
-    createSession
+    createSession,
+    addMovie
 }
