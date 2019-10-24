@@ -64,6 +64,7 @@ const validation = (event)=>{
             email: $('#email').val(),
             cardNumber: $('#cardNumber').val(),
             cvc: $('#cvc').val(),
+            password: $('#password').val()
         };
         fetch('api/v1/users',{
             method: 'POST',
