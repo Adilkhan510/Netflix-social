@@ -38,7 +38,9 @@ router.get('/movies',ctrl.movies.show)
 router.get('/review', ctrl.reviews.show)
 router.post('/review/create', ctrl.reviews.create)
 
-
+router.get('/review/:userId', ctrl.reviews.showAllReviews)
+router.delete('/review/delete/:id', ctrl.reviews.destroy)
+router.put('/review/update/:id', ctrl.reviews.update)
 
 
 module.exports = router;
