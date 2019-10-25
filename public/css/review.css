@@ -84,3 +84,15 @@ button:hover{
         z-index: 100;
 
 }
+.userReviews{
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
+}
+.userReviews .grid{
+    margin-left: 10px;
+
+}
