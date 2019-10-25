@@ -28,7 +28,7 @@ const create = (req, res)=>{
 
 
 const destroy = (req,res)=>{
-    db.Reviews.findOneAndDelete(req.params.ReviewsId, (error,deletedReviews)=>{
+    db.Reviews.findByIdAndDelete(req.params.id, (error,deletedReviews)=>{
     if(error) return console.log(error);
     res.json({
         status:200,
@@ -40,7 +40,7 @@ const destroy = (req,res)=>{
 };
 
 const update = (req,res)=>{
-    db.Reviews.findByIdAndUpdate(req.params.movieId, req.body, {new :true}, (error,updatedReviews)=>{
+    db.Reviews.findByIdAndUpdate(req.params.id, req.body, {new :true}, (error,updatedReviews)=>{
         if(error) return console.log(error);
         res.json({
             status: 200,
@@ -50,10 +50,20 @@ const update = (req,res)=>{
         })
     })
 };
+const showAllReviews = (req,res)=>{
+    db.Reviews.find({user: req.params.userId},(error,foundUserReview)=>{
+        if(error) return console.log(error);
+        res.json({
+            status: 200,
+            data: foundUserReview
+        })
+    })
+}
 
-module.exports ={
+module.exports = {
     show,
     create,
     update,
-    destroy
+    destroy,
+    showAllReviews
 }
