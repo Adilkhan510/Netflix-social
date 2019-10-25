@@ -1,3 +1,5 @@
+
+
 const reviews = {
 	"url": `/api/v1/review/${window.sessionStorage.userid}`,
 	"method": "GET",
@@ -34,6 +36,7 @@ $('body').on('click', ".delete", (event)=>{
     "url": `/api/v1/review/delete/${event.target.parentElement.id}`
     }).done(function (response) {
     console.log(response)
+    return window.location = "/review"
     })
 })
 
@@ -58,9 +61,9 @@ $('body').on('click', ".update", (event)=>{
     }
 }).done(function (response) {
     console.log(response)
+    return window.location = "/review"
     })
     });
-   
 })
 
 const newReview = (event)=> {
@@ -116,5 +119,5 @@ const newReview = (event)=> {
 // $(`body`).on('click', '#update-review', updateReview);
 $(`#submit-review`).on('click', newReview);
 $('#newComments').on('click','.remove',removeReview);
-$('#newComments').on('click', '.edit', updateReview);
+// $('#newComments').on('click', '.edit', updateReview);
 
