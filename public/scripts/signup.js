@@ -76,6 +76,8 @@ const validation = (event)=>{
         .then(stream => stream.json())
         .then(res=>console.log(res))
         .catch((err)=> console.log(err));
+        return window.location = "/login"
+
     
     } else {
         console.log('not valid');
