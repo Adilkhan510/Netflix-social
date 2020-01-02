@@ -2,12 +2,10 @@ const express = require('express');
 const router = express.Router();
 const ctrl = require('../controllers');
 
-
-
 // ------show one user------
 router.get('/users/:id', ctrl.users.show)
 
-// show all users
+// show all users:: for showing purposes should use ROBO3T
 
 router.get('/users', ctrl.users.index);
 
@@ -21,11 +19,11 @@ router.post('/users', ctrl.users.create)
 router.post('/auth/users', ctrl.users.createSession)
 
 // update
+// restful routing process : put for updating and get for seeing so rely on that for making your routes.
 
 router.put('/users/update/:userId', ctrl.users.update);
 router.put('/users/update/:userId/addmovie', ctrl.users.addMovie);
 
-// movies Api ///
 
 // create movie
 router.post('/movies', ctrl.movies.create)

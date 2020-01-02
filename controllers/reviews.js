@@ -46,7 +46,6 @@ const update = (req,res)=>{
             status: 200,
             data:updatedReviews,
             requestedAt: new Date().toLocaleString(),
-
         })
     })
 };

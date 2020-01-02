@@ -5,6 +5,7 @@ const Reviews = require('./Reviews')
 const MoviesSchema = new Schema({
 
     tmdbID: String,
+    // make the tmdbID required 
     reviews: [{
         type: Schema.Types.ObjectId,
         ref : 'Reviews',

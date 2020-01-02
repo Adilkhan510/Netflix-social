@@ -12,7 +12,7 @@ const create = (req,res)=>{
 };
 
 const destroy = (req,res)=>{
-    db.Users.findOneAndDelete(req.params.userId,(error,deletedUser)=>{
+    db.Users.findByIdAndDelete(req.params.userId,(error,deletedUser)=>{
         if(error)return console.log(error);
         res.json({
             status: 200,

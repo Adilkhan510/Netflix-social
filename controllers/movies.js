@@ -12,8 +12,6 @@ const show = (req,res)=>{
     });
 }
 
-
-
 const create = (req, res)=>{
     db.Movies.create(req.body,(error,newMovies)=>{
         if(error) return console.log(error);
@@ -24,7 +22,6 @@ const create = (req, res)=>{
         });
     });
 };
-
 
 const destroy = (req,res)=>{
     db.Movies.findOneAndDelete(req.params.moviesId, (error,deletedMovie)=>{
@@ -45,7 +42,6 @@ const update = (req,res)=>{
             status: 200,
             data:updatedmovie,
             requestedAt: new Date().toLocaleString(),
-
         })
     })
 };

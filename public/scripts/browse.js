@@ -1,30 +1,13 @@
 
-// const like2 = (btns)=>{
-
-// 	buttonArray.forEach(btn => {
-// 		btn.addEventListener('click', (event)=>{
-// 			event.preventDefault();
-// 			console.log('like')
-
-// 		})
-// 	});
-// }
-// like2();
-
-
-
-
-
 const nowPlaying = {
-	"async": true,
-	"crossDomain": true,
+	"async": true, 
+	"crossDomain": true, 
 	"url": "https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key=b899afbc3f53930ff5b7789533082450",
 	"method": "GET",
-	"headers": {},
-	"data": "{}"
   }
   
   $.ajax(nowPlaying).done(function (response) {
+	//   add .catch error here
 
 	for(let i=0; i<6; i++){
 		const template = `
@@ -37,8 +20,6 @@ const nowPlaying = {
 		</div>`
 		$('.slideshow1').append(template)
 	}
-
-	// console.log(response);
 });
 
 const topRated = {
@@ -63,7 +44,6 @@ const topRated = {
 		</div>`
 		$('.slideshow2').append(template)
 	}
-	// console.log(response);
 });
 
 const upcoming = {
@@ -88,8 +68,7 @@ const upcoming = {
 		</div>`
 		$('.slideshow3').append(template)
 	}
-	// const userId = window.sessionStorage.userid;
-	// console.log(userId);
+
 	$('.image-content').on('click', '.like', ()=>{
 		console.log(event.target.classList[0])
 		
@@ -112,35 +91,6 @@ const upcoming = {
 	})
 		
   });
-
-
-
-	
-// $(document).ready()
-
-// $(document).ready(()=>{
-// 	const userId = window.sessionStorage.userid;
-// 	const id=userId.replace(/"/g,"");
-// 	// console.log(userId);
-// 	$('.image-content').on('click', '.like', ()=>{
-// 		console.log(event.target.id)
-	
-// 		const id2 = `${event.target.id}`
-		
-// 		let settings = {
-// 			"url": `/api/v1/users/update/${id}`,
-// 			"method": "PUT",
-// 			"headers": {},
-// 			data: {
-// 				favoriteMovies: id2,
-// 			}
-// 		}
-// 		$.ajax(settings).done(function(response) {
-// 			console.log(response);
-// 		})
-// 		})
-// })
-
 
 
 
