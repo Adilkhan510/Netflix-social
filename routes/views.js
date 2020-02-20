@@ -44,6 +44,12 @@ router.get('/review',(req,res)=>{
     res.sendFile('views/review.html',{
         root:`${__dirname}/../`,
     })
+})
+
+router.get('/favorites',(req,res)=>{
+    res.sendFile('views/favorites.html',{
+        root :`${__dirname}/../`,
     })
+})
 
 module.exports = router

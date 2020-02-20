@@ -18,7 +18,7 @@ const nowPlaying = {
 				<button class="${response.results[i].id} comment"><i class="fas fa-comment"></i></button>
 			</div>  
 		</div>`
-		$('.slideshow1').append(template)
+		$('.1').append(template)
 	}
 });
 
@@ -42,7 +42,7 @@ const topRated = {
 				<button class="${response.results[i].id} comment"><i class="fas fa-comment"></i></button>
 			</div>  
 		</div>`
-		$('.slideshow2').append(template)
+		$('.2').append(template)
 	}
 });
 
@@ -66,7 +66,7 @@ const upcoming = {
 				<button class="${response.results[i].id} comment"><i class="fas fa-comment"></i></button>
 			</div>  
 		</div>`
-		$('.slideshow3').append(template)
+		$('.3').append(template)
 	}
 
 	$('.image-content').on('click', '.like', ()=>{

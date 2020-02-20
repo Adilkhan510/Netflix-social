@@ -10,14 +10,19 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
-
+/* 
 header{
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-auto-rows: minmax(40px, auto);
     margin: 20px;
-}
+} */
 
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 header img{
     width:200px;
     height: 60px;
@@ -46,44 +51,18 @@ h1{
 
 }
 
-.slideshow1{
+.slideshow{
     display: grid;
     grid-template-columns: repeat(6,minmax(100px,1fr));
     grid-auto-rows: auto;
     justify-content: center;
     justify-items: center;
 }
-.slideshow1 img{
+.slideshow img{
     width: 150px;
     height: 150px;
     margin:0;
 }
-.slideshow2{
-    display: grid;
-    grid-template-columns: repeat(6,minmax(100px,1fr));
-    grid-auto-rows: auto;
-    justify-content: center;
-    justify-items: center;
-}
-.slideshow2 img{
-    width: 150px;
-    height: 150px;
-    margin:0;
-}
-
-.slideshow3{
-    display: grid;
-    grid-template-columns: repeat(6,minmax(100px,1fr));
-    grid-auto-rows: auto;
-    justify-content: center;
-    justify-items: center;
-}
-.slideshow3 img{
-    width: 150px;
-    height: 150px;
-    margin:0;
-}
-
 .imageClass:hover{
     transition: transform .5s;
     transform: scale(1.4);
@@ -97,3 +76,17 @@ h1{
     grid-template-columns: 0.5fr 0.5fr;
 }
 
+@media screen and (max-width:1000px){
+    .slideshow{
+        display: grid;
+        grid-template-columns: repeat(3,minmax(100px,1fr));
+        grid-auto-rows: auto;
+        justify-content: center;
+        justify-items: center;
+    }
+    .slideshow img{
+        width: 150px;
+        height: 150px;
+        margin:0;
+    }
+}
