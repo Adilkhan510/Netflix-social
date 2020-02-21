@@ -1,8 +1,10 @@
-const getFavorites = ()=>{
-    fetch(`/api/v1/users/${window.sessionStorage.getItem('userid')}/favorites`, {
+const getFavorites = async ()=>{
+   const data = await fetch(`/api/v1/users/${window.sessionStorage.getItem('userid')}/favorites`, {
         method: 'GET',
         headers : {},
-      }).then(response=>console.log(response)).catch(error=>{console.log(error)})
+      }).then(response=>response.json()).then(json=>json.data)
+      .catch(error=>{console.log(error)})
+    console.log(data)
 }
 
 getFavorites()

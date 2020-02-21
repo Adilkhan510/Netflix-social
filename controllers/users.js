@@ -121,8 +121,9 @@ const getFavorites=(req,res)=>{
             console.log(data)
             res.json({
                 status : 200,
-                data : {data}
+                data : data
             })
+            console.log(res.json)
         }
     })
 }
