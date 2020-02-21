@@ -7,7 +7,7 @@ router.get('/users/:id', ctrl.users.show)
 
 // show all users:: for showing purposes should use ROBO3T
 
-router.get('/users', ctrl.users.index);
+router.get('/users/:id/favorites', ctrl.users.getFavorites);
 
 // delete user
 

@@ -112,6 +112,21 @@ const addMovie = (req,res) => {
     });
 }
 
+const getFavorites=(req,res)=>{
+    console.log('Req Came thru')
+    db.Users.findById(req.params.id,(error,foundUser)=>{
+        if(error) console.log(error);
+        if(foundUser){
+            const data = foundUser.favoriteMovies
+            console.log(data)
+            res.json({
+                status : 200,
+                data : {data}
+            })
+        }
+    })
+}
+
 
 module.exports ={
     show,
@@ -120,5 +135,6 @@ module.exports ={
     destroy,
     index,
     createSession,
-    addMovie
+    addMovie,
+    getFavorites
 }

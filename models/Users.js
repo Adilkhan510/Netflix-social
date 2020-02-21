@@ -12,12 +12,6 @@ const UserSchema = new Schema({
         type: String
     },
     password: String,
-    cardNumber: {
-        type: Number,
-    },
-    cvc : {
-        type: Number
-    },
     favoriteMovies : [{
         type: String,
     }],
