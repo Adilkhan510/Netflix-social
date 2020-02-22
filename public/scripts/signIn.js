@@ -20,8 +20,6 @@ const checkUser= ()=>{
             window.sessionStorage.setItem(`userid`, `${res.data.id}`)
             window.sessionStorage.setItem(`name`, `${res.data.name}`)
             window.sessionStorage.setItem(`email`, `${res.data.email}`)
-            window.sessionStorage.setItem(`cardNumber`, `${res.data.cardNumber}`)
-            window.sessionStorage.setItem(`cvc`, `${res.data.cvc}`)
             return window.location = '/browse'
           }
         })

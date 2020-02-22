@@ -6,6 +6,7 @@ const ctrl = require('../controllers');
 router.get('/users/:id', ctrl.users.show)
 
 // show all users:: for showing purposes should use ROBO3T
+router.get('/users',ctrl.users.index)
 
 router.get('/users/:id/favorites', ctrl.users.getFavorites);
 
@@ -22,7 +23,7 @@ router.post('/auth/users', ctrl.users.createSession)
 // restful routing process : put for updating and get for seeing so rely on that for making your routes.
 
 router.put('/users/update/:userId', ctrl.users.update);
-router.put('/users/update/:userId/addmovie', ctrl.users.addMovie);
+router.put('/users/update/:userId/addmovie', ctrl.users.addToFavorites);
 
 
 // create movie

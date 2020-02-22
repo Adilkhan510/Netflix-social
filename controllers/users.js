@@ -86,8 +86,8 @@ const createSession = (req,res)=>{
 }
 
 const addMovie = (req,res) => {
-    const movie = req.body.movie
-    console.log(movie);
+    const movie = req.body
+    console.log(movie)
     db.Users.findById(req.params.userId, (error, foundUser)=>{
         if(error)return console.log(error);
         db.Movies.findOne({tmdbID: movie}, (error, foundMovie)=>{
@@ -110,6 +110,28 @@ const addMovie = (req,res) => {
             });
         })
     });
+}
+
+const addToFavorites = (req,res)=>{
+    db.Users.findById(req.params.userId, (error, foundUser)=>{
+        if(error) console.log("error", error)
+        if(foundUser){
+            console.log("Adding Movies")
+            console.log(req.body.movie)
+            console.log(foundUser.favoriteMovies)
+            foundUser.favoriteMovies.push(req.body.movie)
+        }
+        foundUser.save((error,savedUser)=>{
+            if(error) console.log(error)
+            else{
+                res.json({
+                    status: 200,
+                    data : savedUser.favoriteMovies
+                })
+            }
+        })
+    })
+
 }
 
 const getFavorites=(req,res)=>{
@@ -137,5 +159,6 @@ module.exports ={
     index,
     createSession,
     addMovie,
-    getFavorites
+    getFavorites,
+    addToFavorites
 }

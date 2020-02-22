@@ -2,7 +2,7 @@
 
 console.log("hello")
 
-let iChars = ["˜", "`", "!", "#", "$", "%", "ˆ", "&", "*", "+", "=", "-", "_", "[", "]", "/", ";", ":", ",", "{", "}", "|", "<", ">", "?", "!"];
+const iChars = ["˜", "`", "!", "#", "$", "%", "ˆ", "&", "*", "+", "=", "-", "_", "[", "]", "/", ";", ":", ",", "{", "}", "|", "<", ">", "?", "!"];
 
 let valid = true;
 
@@ -32,11 +32,8 @@ validateEmail =(email)=> {
 const nameval = $(`#name`).val();
 const lastNameval = $(`#lastName`).val();
 const emailval = $(`#email`).val();
-const ageval = $(`#age`).val();
 const passwordval = $(`#password`).val();
 const passwordConfirmval = $(`#passwordConfirm`).val();
-const cardNumberval = $(`#cardNumber`).val();
-const cvcval = $(`#cvc`).val();
 
 const name = $(`#name`);
 const lastname = $(`lastName`);
@@ -44,12 +41,10 @@ const email = $(`#email`);
 const age = $(`#age`);
 const password = $(`#password`);
 const passwordConfirm = $(`#passwordConfirm`);
-const cardNumber = $(`#cardNumber`);
-const cvc = $(`#cvc`);
 
-const allElementsValue = [nameval, lastNameval , cardNumberval, cvcval];
-const allEllement = ['#name' , '#lastName', '#cardNumber','#cvc']
-const allP = ['#name-p' , '#lastName-p', '#cardNumber-p','#cvc-p']
+const allElementsValue = [nameval, lastNameval];
+const allEllement = ['#name' , '#lastName']
+const allP = ['#name-p' , '#lastName-p']
 
 const validation = (event)=>{
     valid = true;
@@ -62,8 +57,6 @@ const validation = (event)=>{
             name : $('#name').val(),
             lastName: $('#lastName').val(),
             email: $('#email').val(),
-            cardNumber: $('#cardNumber').val(),
-            cvc: $('#cvc').val(),
             password: $('#password').val()
         };
         fetch('api/v1/users',{
@@ -138,26 +131,6 @@ const rewriteLastName = (event)=>{
 }
 }
 
-const rewriteCardumber= (event)=>{
-    event.preventDefault();
-    if( $(`#cardNumber`).hasClass("invalid") || $(`#cardNumber`).hasClass("valid")){
-        $(`#cardNumber`).removeClass("invalid");
-        $(`#cardNumber`).removeClass("valid");
-        $(`#cardNumber`).val("");
-        $('#cardNumber-p').text("");
-}
-}
-
-const rewriteCvc= (event)=>{
-    event.preventDefault();
-    if( $(`#cvc`).hasClass("invalid") || $(`#cvc`).hasClass("valid")){
-        $(`#cvc`).removeClass("invalid");
-        $(`#cvc`).removeClass("valid");
-        $(`#cvc`).val("");
-        $('#cvc-p').text("");
-}
-}
-
 
 $('#signin').on('click',validation);
 $(`#email`).on( "focusout", Emailvalidation);
@@ -167,7 +140,5 @@ $(`#password`).on( "focusin", rewritePass);
 
 $(`#name`).on( "focusin", rewriteName);
 $(`#lastName`).on( "focusin", rewriteLastName);
-$(`#cardNumber`).on( "focusin", rewriteCardumber);
-$(`#cvc`).on( "focusin", rewriteCvc);
 
 
